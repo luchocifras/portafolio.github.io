@@ -62,3 +62,34 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
     // Simular el clic para descargar
     link.click();
   });
+
+
+  //GALERIA
+     const tabs = document.querySelectorAll('.tab');
+        const galleries = document.querySelectorAll('.images');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to the clicked tab
+                tab.classList.add('active');
+
+                // Hide all galleries
+                galleries.forEach(gallery => gallery.classList.remove('active'));
+                // Show the gallery corresponding to the clicked tab
+                const target = document.getElementById(tab.dataset.target);
+                target.classList.add('active');
+            });
+        });
+
+        const fulImgBox = document.getElementById("fulImgBox"),
+        fulImg = document.getElementById("fulImg");
+        
+        function openFulImg(reference){
+            fulImgBox.style.display = "flex";
+            fulImg.src = reference
+        }
+        function closeImg(){
+            fulImgBox.style.display = "none";
+        }
