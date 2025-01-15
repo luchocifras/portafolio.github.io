@@ -741,3 +741,170 @@ footer .arriba{
     }
 }
 
+
+
+/* GALERIA */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #1cb698cc;
+    background-color: #1cb698;
+    margin-right: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+    background-color: white;
+    color: #1cb698;
+    border-color: white;
+}
+
+.images {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.images.active {
+    display: grid;
+}
+
+.images img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+  }
+
+.overlay a {
+    color: white;
+    text-decoration: none;
+    background-color: #1cb698cc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+
+.overlay a:hover {
+    background-color: #1cb698cc;
+  }
+
+
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    transition: opacity 0.3s;
+  }
+
+  /* FOTOGRAFIA */
+  .img-gallery{
+    width: 80%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 30px;
+}
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+}
+.img-gallery img:hover{
+    transform: scale(1.2);
+}
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0,0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.ful-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.ful-img img{
+    width: 90%;
+    max-width: 600px;
+}
+@media screen and (max-width:400px){
+    h1{
+        text-decoration: underline;
+    }
+    h1::before{
+        display: none;
+    }
+    h1 span{
+        padding: 0;
+    }
+}
