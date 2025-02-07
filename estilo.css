@@ -40,7 +40,7 @@ html{
     text-align: none;
     color: #fff;
     margin: 0 15px;
-    padding: 3px;
+   /*  padding: 3px; */
     transition: .5s;
     text-decoration: none;
 }
@@ -273,6 +273,23 @@ html{
 .skills .skill .javascript{
     width: 0%;
     animation: 2s javascript forwards;
+}
+
+.reel{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+.reel .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.reel h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+
 }
 @keyframes javascript {
     0%{width: 0%;}
@@ -1023,4 +1040,40 @@ footer .arriba{
     .photo-gallery{
         flex-direction: column;
     }
+}
+
+
+
+
+
+/*nuevo^*/
+.video-container {
+    position: relative;
+}
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+.control-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+.control-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.fullscreen-btn {
+    right: 70px; /* Separación entre botones */
 }
