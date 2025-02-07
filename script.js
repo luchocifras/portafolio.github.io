@@ -78,6 +78,75 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
         }
 
 
+//reel
+/*         const video = document.getElementById("myVideo");
+        const audioButton = document.getElementById("audioToggle");
+        const icon = audioButton.querySelector("i");
+
+        audioButton.addEventListener("click", () => {
+            video.muted = !video.muted; 
+            icon.classList.toggle("fa-volume-mute", video.muted);
+            icon.classList.toggle("fa-volume-up", !video.muted);
+        });
+
+        document.addEventListener("click", () => {
+            video.muted = false;
+            icon.classList.replace("fa-volume-mute", "fa-volume-up");
+        }, { once: true }); */
+
+        const video = document.getElementById("myVideo");
+        const videoContainer = document.getElementById("videoContainer");
+        const audioButton = document.getElementById("audioToggle");
+        const fullscreenButton = document.getElementById("fullscreenToggle");
+        const audioIcon = audioButton.querySelector("i");
+        const fullscreenIcon = fullscreenButton.querySelector("i");
+
+        // Alternar sonido
+        audioButton.addEventListener("click", () => {
+            video.muted = !video.muted;
+            audioIcon.classList.toggle("fa-volume-mute", video.muted);
+            audioIcon.classList.toggle("fa-volume-up", !video.muted);
+        });
+
+        // Permitir sonido en el primer clic
+        document.addEventListener("click", () => {
+            video.muted = false;
+            audioIcon.classList.replace("fa-volume-mute", "fa-volume-up");
+        }, { once: true });
+
+        // Alternar pantalla completa
+        fullscreenButton.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                if (videoContainer.requestFullscreen) {
+                    videoContainer.requestFullscreen();
+                } else if (videoContainer.mozRequestFullScreen) { // Firefox
+                    videoContainer.mozRequestFullScreen();
+                } else if (videoContainer.webkitRequestFullscreen) { // Chrome, Safari y Edge
+                    videoContainer.webkitRequestFullscreen();
+                } else if (videoContainer.msRequestFullscreen) { // IE/Edge
+                    videoContainer.msRequestFullscreen();
+                }
+                fullscreenIcon.classList.replace("fa-expand", "fa-compress");
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                fullscreenIcon.classList.replace("fa-compress", "fa-expand");
+            }
+        });
+
+        // Escuchar cambios en el modo de pantalla completa
+        document.addEventListener("fullscreenchange", () => {
+            if (!document.fullscreenElement) {
+                fullscreenIcon.classList.replace("fa-compress", "fa-expand");
+            }
+        });
 
 
-
+        
