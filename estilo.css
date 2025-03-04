@@ -379,12 +379,25 @@ html{
 
 
 .album{
-    background-color: #1e2326;
+    background-color: #252A2E;
     color: #fff;
     padding: 50px 20px;
 }
 
 .album h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+
+.grafica{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.grafica h2 {
     font-size: 48px;
     font-family: 'Righteous';
     text-align: center;
