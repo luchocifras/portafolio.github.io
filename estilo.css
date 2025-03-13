@@ -39,11 +39,32 @@ html{
 .contenedor-header header nav ul li a{
     text-align: none;
     color: #fff;
-    margin: 0 15px;
-   /*  padding: 3px; */
+   /*  margin: 15px 15px; */
+  /*   padding: 3px; */
     transition: .5s;
     text-decoration: none;
 }
+
+
+  .menu {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usar flexbox para los elementos */
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+  }
+  
+  .menu li {
+    margin: 0 6px; 
+  }
+  
+  /* Estilo cuando pasas el cursor por encima (hover) */
+  .menu li:hover {
+    color: #007BFF; /* Cambiar color cuando el cursor pasa por encima */
+    text-decoration: underline; /* Subrayado opcional */
+  }
+  
+
 .contenedor-header header nav ul li a:hover{
     color: #1CB698;
 }
