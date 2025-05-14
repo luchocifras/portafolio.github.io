@@ -94,27 +94,24 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
             icon.classList.replace("fa-volume-mute", "fa-volume-up");
         }, { once: true }); */
 
-        const video = document.getElementById("myVideo");
+       /*  const video = document.getElementById("myVideo");
         const videoContainer = document.getElementById("videoContainer");
         const audioButton = document.getElementById("audioToggle");
         const fullscreenButton = document.getElementById("fullscreenToggle");
         const audioIcon = audioButton.querySelector("i");
         const fullscreenIcon = fullscreenButton.querySelector("i");
 
-        // Alternar sonido
         audioButton.addEventListener("click", () => {
             video.muted = !video.muted;
             audioIcon.classList.toggle("fa-volume-mute", video.muted);
             audioIcon.classList.toggle("fa-volume-up", !video.muted);
         });
 
-        // Permitir sonido en el primer clic
         document.addEventListener("click", () => {
             video.muted = false;
             audioIcon.classList.replace("fa-volume-mute", "fa-volume-up");
         }, { once: true });
 
-        // Alternar pantalla completa
         fullscreenButton.addEventListener("click", () => {
             if (!document.fullscreenElement) {
                 if (videoContainer.requestFullscreen) {
@@ -141,12 +138,11 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
             }
         });
 
-        // Escuchar cambios en el modo de pantalla completa
         document.addEventListener("fullscreenchange", () => {
             if (!document.fullscreenElement) {
                 fullscreenIcon.classList.replace("fa-compress", "fa-expand");
             }
-        });
+        }); */
 
 
          const lightbox = document.getElementById('lightbox');
@@ -188,4 +184,38 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
     if (e.key === 'Escape') lightbox.classList.add('hidden');
     if (e.key === 'ArrowRight') nextBtn.click();
     if (e.key === 'ArrowLeft') prevBtn.click();
+  });
+
+
+
+
+
+  const video = document.getElementById("myVideo");
+  const playBtn = document.getElementById("playBtn");
+  const fullscreenBtn = document.getElementById("fullscreenToggle");
+  const audioBtn = document.getElementById("audioToggle");
+
+  // Play video on button click
+  playBtn.addEventListener("click", () => {
+    video.play();
+    playBtn.style.display = "none";
+  });
+
+  // Toggle fullscreen
+  fullscreenBtn.addEventListener("click", () => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  });
+
+  // Toggle mute/unmute
+  audioBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    audioBtn.innerHTML = video.muted
+      ? '<i class="fas fa-volume-mute"></i>'
+      : '<i class="fas fa-volume-up"></i>';
   });
