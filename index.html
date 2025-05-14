@@ -52,19 +52,9 @@
             </div>
         </div>
     </section>
-
+<!-- 
     <section id="reel" class="sobremi"  style="background-color: #252A2E; justify-items: anchor-center !important;">
       <div class="contenido-seccion grid video-container" id="videoContainer" style=" justify-content: center; display: contents;"> 
-    <!--     <button id="audioToggle" class="audio-btn" style="border: none;">
-          <i class="fas fa-volume-mute"></i>
-      </button>
-      <button id="fullscreenToggle" class="control-btn fullscreen-btn">
-        <i class="fas fa-expand"></i>
-    </button>
-        <video id="myVideo" muted autoplay playsinline>
-          <source src="img/SALIDA_REEL_2.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de videos.
-      </video> -->
       <span id="audioToggle" style="border: none;">
         <i class="fas fa-volume-mute"></i>
       </span>
@@ -78,9 +68,34 @@
         Tu navegador no soporta la reproducción de videos.
     </video>
    </div>
-
-   
       </div>
+    </section> -->
+
+    
+    <section id="reel"style="background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+">
+      <div class="video-wrapper">
+  <video id="myVideo" poster="img/reel.png" muted playsinline>
+    <source src="img/SALIDA_REEL_1.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
+  </video>
+
+  <button id="playBtn" class="play-btn">
+    <i class="fas fa-play"></i>
+  </button>
+
+  <div class="controls">
+    <button id="audioToggle" class="control-btn" style="margin-right: 4rem;">
+      <i class="fas fa-volume-mute"></i>
+    </button>
+    <button id="fullscreenToggle" class="control-btn">
+      <i class="fas fa-expand"></i>
+    </button>
+  </div>
+</div>
+
     </section>
 
     <!-- SECCION SOBRE MI -->
@@ -568,13 +583,6 @@
         <a href="#inicio" class="arriba">
             <i class="fa-solid fa-angles-up"></i>
         </a>
-  <!--       <div class="redes">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-skype"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-solid fa-rss"></i></a>
-        </div> -->
     </footer>
 
     <script src="script.js"></script>
