@@ -149,4 +149,43 @@ document.getElementById('downloadPdf').addEventListener('click', () => {
         });
 
 
-        
+         const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeBtn = document.querySelector('.lightbox .close');
+  const nextBtn = document.querySelector('.lightbox .next');
+  const prevBtn = document.querySelector('.lightbox .prev');
+
+  const images = Array.from(document.querySelectorAll('.photo-gallery img'));
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const img = images[index];
+    if (img) {
+      lightboxImage.src = img.src;
+      currentIndex = index;
+      lightbox.classList.remove('hidden');
+    }
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => showImage(index));
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showImage((currentIndex + 1) % images.length);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    showImage((currentIndex - 1 + images.length) % images.length);
+  });
+
+  // Opcional: cerrar con tecla ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.add('hidden');
+    if (e.key === 'ArrowRight') nextBtn.click();
+    if (e.key === 'ArrowLeft') prevBtn.click();
+  });
