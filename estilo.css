@@ -1111,3 +1111,58 @@ video {
 .fullscreen-btn {
     right: 70px; /* Separación entre botones */
 }
+
+
+/** * Estilos para el botón de pausa
+ */
+ .lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox .prev, .lightbox .next {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: #fff;
+  padding: 16px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: auto;
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+.hidden {
+  display: none;
+}
